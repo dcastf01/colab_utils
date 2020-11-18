@@ -14,6 +14,8 @@ Load a json with the next format and download the repository and you can do comm
 
 
 from google.colab import files
+import subprocess 
+
 def upload_credential():
   global GIT_USERNAME
   global GIT_EMAIL
@@ -37,10 +39,7 @@ def upload_credential():
   GIT_REPOSITORY=credential["GIT_REPOSITORY"]
   PROJECT_PATH=credential["PROJECT_PATH"]
 
-  !git config --global user.email $GIT_EMAIL
-  !git config --global user.name $GIT_USERNAME
-
-  !git clone https://$GIT_USERNAME:$GIT_TOKEN@github.com/$GIT_USERNAME/$GIT_REPOSITORY
+  rc = subprocess.call("./sleep.sh", shell=True)
   
 def do_commit():
   %cd /content/$GIT_REPOSITORY
