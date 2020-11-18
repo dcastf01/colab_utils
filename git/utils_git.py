@@ -39,7 +39,7 @@ def upload_credential():
   GIT_REPOSITORY=credential["GIT_REPOSITORY"]
   PROJECT_PATH=credential["PROJECT_PATH"]
 
-  rc = subprocess.call("./sleep.sh", shell=True)
+  rc = subprocess.call("download_repository.sh", shell=True)
   
 def do_commit():
   %cd /content/$GIT_REPOSITORY
