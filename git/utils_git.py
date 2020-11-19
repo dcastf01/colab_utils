@@ -40,8 +40,8 @@ def upload_credential_and_create_env_variables():
   os.environ["GIT_REPOSITORY"]=GIT_REPOSITORY
   PROJECT_PATH=credential["PROJECT_PATH"]
   os.environ["PROJECT_PATH"]=PROJECT_PATH
-
-
+  print("variables created")
+   
 def download_repository():
   command="bash /content/colab_utils/git/download_repository.sh"
   try:
