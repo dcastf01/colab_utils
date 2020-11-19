@@ -52,7 +52,7 @@ def download_repository():
 
 def do_commit_and_push(commit_text="update repository"):
     os.environ["COMMIT_TEXT"]=commit_text
-    command="bash /content/colab_utils/git/do_commit.sh"
+    command="bash /content/colab_utils/git/do_commit_and_push.sh"
     try:
         subprocess.run(command.split())
         print("The commit is ok")
