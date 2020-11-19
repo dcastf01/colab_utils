@@ -32,7 +32,7 @@ def upload_credential():
     credential=json.load(content)
 
 
-  print( "set env variables")
+  print( "creating env variables")
   GIT_USERNAME=credential["GIT_USERNAME"]
   os.environ["GIT_USERNAME"]=GIT_USERNAME
   GIT_EMAIL=credential["GIT_EMAIL"]
@@ -44,7 +44,11 @@ def upload_credential():
   PROJECT_PATH=credential["PROJECT_PATH"]
   os.environ["PROJECT_PATH"]=PROJECT_PATH
   command="bash /content/colab_utils/git/download_repository.sh"
-  subprocess.run(command.split())
+  try:
+    subprocess.run(command.split())
+    print("The repository is ready")
+  except:
+    print("we have a problem, analyze")
 
 # def do_commit():
 #   %cd /content/$GIT_REPOSITORY
