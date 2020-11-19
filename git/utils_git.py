@@ -50,9 +50,11 @@ def download_repository():
   except:
     print("we have a problem, analyze")
 
-# def do_commit():
-#   %cd /content/$GIT_REPOSITORY
-#   !git add .
-#   !git commit -m 'add imports'
-#   !git push origin master 
-#   %cd /content
+def do_commit(commit_text="update repository"):
+    os.environ["COMMIT_TEXT"]=commit_text
+    command="bash /content/colab_utils/git/do_commit.sh"
+    try:
+        subprocess.run(command.split())
+        print("The commit is ok")
+  except:
+        print("we have a problem, analyze")
