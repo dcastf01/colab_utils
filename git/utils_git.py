@@ -56,5 +56,5 @@ def do_commit(commit_text="update repository"):
     try:
         subprocess.run(command.split())
         print("The commit is ok")
-  except:
+    except:
         print("we have a problem, analyze")
