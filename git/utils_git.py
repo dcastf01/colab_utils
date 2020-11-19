@@ -51,7 +51,7 @@ def download_repository():
     print("we have a problem, analyze")
 
 def do_commit(commit_text="update repository"):
-    os.environ["COMMIT_TEXT"]=str(commit_text)
+    os.environ["COMMIT_TEXT"]="'"+str(commit_text)+"'"
     command="bash /content/colab_utils/git/do_commit.sh"
     try:
         subprocess.run(command.split())
