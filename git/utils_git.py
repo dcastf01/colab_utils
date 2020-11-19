@@ -17,7 +17,7 @@ from google.colab import files
 import os
 import subprocess 
 import json
-def upload_credential():
+def upload_credential_and_create_env_variables():
 
   
   uploaded = files.upload()
@@ -26,11 +26,8 @@ def upload_credential():
     print('User uploaded file "{name}" with length {length} bytes'.format(
         name=file_with_credential, length=len(uploaded[file_with_credential])))
 
-
-
   with open(file_with_credential, "r") as content:
     credential=json.load(content)
-
 
   print( "creating env variables")
   GIT_USERNAME=credential["GIT_USERNAME"]
@@ -43,6 +40,9 @@ def upload_credential():
   os.environ["GIT_REPOSITORY"]=GIT_REPOSITORY
   PROJECT_PATH=credential["PROJECT_PATH"]
   os.environ["PROJECT_PATH"]=PROJECT_PATH
+
+
+def download_repository():
   command="bash /content/colab_utils/git/download_repository.sh"
   try:
     subprocess.run(command.split())
