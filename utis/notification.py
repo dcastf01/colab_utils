@@ -14,7 +14,7 @@ class InvisibleAudio(Audio):
         return f'<div style="display:none">{audio}</div>'
 
 
-def set_sound_notification2():
+def set_sound_notification():
     def sound_notification_before(*args):
         sound = Triangle(440).to_audio_segment(duration=50).apply_gain(-10).fade_in(20).fade_out(20)
         display(InvisibleAudio(data=sound.export().read(), autoplay=True))
