@@ -3,6 +3,7 @@ It aims to be a repository with various scripts that help make it easier to work
 
 
 ## Tensorboard 
+This part was extract from https://github.com/mixuala/colab_utils
 create a public `tensorboard` URL using secure introspective tunnels via `ngrok`
 
 When training on `colaboratory` VMs it it often useful to monitor the session via 
