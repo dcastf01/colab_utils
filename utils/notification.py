@@ -19,7 +19,7 @@ def set_sound_notification():
         sound = Triangle(440).to_audio_segment(duration=50).apply_gain(-10).fade_in(20).fade_out(20)
         display(InvisibleAudio(data=sound.export().read(), autoplay=True))
 
-    def sound_notification_after(file_mp3="/content/colab_utils/utis/soundtrack_harry_potter.mp3",*args):
+    def sound_notification_after(file_mp3="/content/colab_utils/utils/soundtrack_harry_potter.mp3",*args):
         sound=AudioSegment.from_mp3(file_mp3)
         display(InvisibleAudio(data=sound.export().read(), autoplay=True))
 
