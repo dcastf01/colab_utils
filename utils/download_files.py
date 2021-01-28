@@ -38,16 +38,16 @@ def download_file_from_google_drive(id: str, destination: str):
     save_response_content(response, destination)
 
 def generate_id_destination_to_download(path_txt:str)->dict:
-    """[Generate a dictionary with the id is the key and the name of file the value]
+        """[Generate a dictionary with the id is the key and the name of file the value]
 
-    Args:
-        path_txt (str): [name file txt where you have the id and key]
+        Args:
+            path_txt (str): [name file txt where you have the id and key]
 
-    Returns:
-        dict: [id:destination]
-    """    
-      
-  with open(path_txt,"r") as f:
-    ids_and_name_file_to_download ={line.split(" ")[0]:line.split(" ")[1].split("\n")[0] for line in f}
+        Returns:
+            dict: [id:destination]
+        """    
+        
+    with open(path_txt,"r") as f:
+        ids_and_name_file_to_download ={line.split(" ")[0]:line.split(" ")[1].split("\n")[0] for line in f}
 
-  return ids_and_name_file_to_download
+    return ids_and_name_file_to_download
